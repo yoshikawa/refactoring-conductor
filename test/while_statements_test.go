@@ -7,16 +7,16 @@ import (
 	"github.com/st-tech/refactoring-conductor/internal"
 )
 
-func TestFunctionStatements(t *testing.T) {
+func TestWhileStatements(t *testing.T) {
 	tests := []struct {
 		filename      string
 		expectedValue int
 	}{
-		{"testdata/function/function.vbs", 2},
-		{"testdata/function/public_function.vbs", 3},
-		{"testdata/function/public_default_function.vbs", 4},
-		{"testdata/function/private_function.vbs", 1},
-		{"testdata/function/two_function.vbs", 3},
+		{"testdata/while/while.vbs", 1},
+		{"testdata/while/while_nest.vbs", 3},
+		{"testdata/while/while_triple_nest.vbs", 6},
+		{"testdata/while/while_multi.vbs", 2},
+		{"testdata/while/while_wend.vbs", 2},
 	}
 	for _, test := range tests {
 		vbscript := domain.VBScript{}

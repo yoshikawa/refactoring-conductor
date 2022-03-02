@@ -7,16 +7,18 @@ import (
 	"github.com/st-tech/refactoring-conductor/internal"
 )
 
-func TestFunctionStatements(t *testing.T) {
+func TestDoStatements(t *testing.T) {
 	tests := []struct {
 		filename      string
 		expectedValue int
 	}{
-		{"testdata/function/function.vbs", 2},
-		{"testdata/function/public_function.vbs", 3},
-		{"testdata/function/public_default_function.vbs", 4},
-		{"testdata/function/private_function.vbs", 1},
-		{"testdata/function/two_function.vbs", 3},
+		{"testdata/do/do.vbs", 1},
+		{"testdata/do/do_while.vbs", 1},
+		{"testdata/do/do_until.vbs", 1},
+		{"testdata/do/do_nest.vbs", 3},
+		{"testdata/do/do_multi.vbs", 2},
+		{"testdata/do/do_whitespace.vbs", 2},
+		{"testdata/do/do_triple_nest.vbs", 6},
 	}
 	for _, test := range tests {
 		vbscript := domain.VBScript{}
